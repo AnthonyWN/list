@@ -5,14 +5,14 @@
   </div>
 
   <div class="additem">
-    <input type="text" placeholder="Add task" class="addtext" />
+    <input [(ngModel)]="newItem" placeholder="Add task" class="addtext"/>
     <button>Add</button>
   </div>
 
   <div class="list">
     <ul>
-      <li>
-        start
+      <li *ngFor = "let t of tasks">
+        {{ t }}
         <span>x</span>
       </li>
     </ul>

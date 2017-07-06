@@ -6,14 +6,14 @@
 
   <div class="additem">
     <input [(ngModel)]="newItem" placeholder="Add task" class="addtext"/>
-    <button>Add</button>
+    <button (click) = "pushItem()" >Add</button>
   </div>
 
   <div class="list">
     <ul>
-      <li *ngFor = "let t of tasks">
+      <li *ngFor = "let t of tasks; let ind = index ">
         {{ t }}
-        <span>x</span>
+        <span (click) = "removeItem(ind)" >x</span>
       </li>
     </ul>
   </div>
